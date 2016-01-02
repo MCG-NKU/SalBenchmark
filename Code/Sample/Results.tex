@@ -1,0 +1,125 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{cite}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\usepackage[pdfborder=false,colorlinks,bookmarksnumbered,bookmarksopen,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb} % define this before the line numbering.
+\usepackage{epsfig}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{amsfonts}
+\newcommand{\tickYes}{\bullet}
+\newcommand{\cmark}{\ding{51}}
+\usepackage{pifont}
+\newcommand{\tickNo}{\hspace{1pt}\ding{55}}
+\definecolor{gray1}{rgb}{.8,.8,.8}
+\usepackage{xspace}
+\usepackage{footnote}
+\usepackage{etoolbox}
+\usepackage{overpic}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\def\ie{\emph{i.e.}}
+\def\eg{\emph{e.g.}}
+\def\etal{{\em et al.}}
+
+\newcommand{\cmm}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\ali}[1]{{\textcolor{red}{[ALI:] #1}}}
+\newcommand{\hzj}[1]{{\textcolor{magenta}{[HZ]: #1}}}
+\newcommand{\first}[1]{{\textcolor{red}{#1}}}
+\newcommand{\second}[1]{{\textcolor{green}{#1}}}
+\newcommand{\third}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+\newcommand{\tabref}[1]{Fig. \ref{#1}}
+\newcommand{\equref}[1]{(\ref{#1})}
+\newcommand{\secref}[1]{Sec. \ref{#1}}
+\newcommand{\algref}[1]{Alg. \ref{#1}}
+\renewcommand{\arraystretch}{1.1}
+\renewcommand{\tabcolsep}{.5mm}
+\newcommand{\datasets}{{\scriptsize PASCAL-S}&{\scriptsize THUR15K} & {\scriptsize JuddDB} &
+{\scriptsize DUT-OMRON}&{\scriptsize MSRA10K} &
+{\scriptsize ECSSD}}
+
+\newcommand{\Rows}[1]{\multirow{3}{*}{#1}}
+\newcommand{\Cols}[1]{\multicolumn{3}{c|}{#1}}
+\newcommand{\tabTitle}{}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand{\AddImg}[1]{}
+\newcommand{\AddImgs}[2]{}
+\newcommand{\AddImgsU}[2]{}
+\newcommand{\myPara}[1]{\vspace{.05in}\noindent\textbf{#1.}}
+\newcommand{\sArt}{state-of-the-art}
+
+
+
+\ifCLASSINFOpdf
+\else
+\fi
+
+\begin{document}
+
+
+
+\begin{figure*}[t]
+\renewcommand{\tabTitle}{ \textbf{Model}&\scriptsize {Dataset1}&\scriptsize {Dataset2}}
+\begin{minipage}[t]{0.48\linewidth}
+    \centering \small
+    \renewcommand{\arraystretch}{1.1}
+    \renewcommand{\tabcolsep}{1.2mm}
+    \input{AUC.tex}
+    \caption{AUC: area under ROC curve (Higher is better. The top three models are highlighted in red, green and blue). }\label{fig:AUC}
+\end{minipage}
+\hspace{0.9cm}
+\begin{minipage}[t]{0.48\linewidth}
+    \centering \small
+    %\fontsize{8.5}{1em}\selectfont
+    \renewcommand{\arraystretch}{1.1}
+    \renewcommand{\tabcolsep}{1.2mm}
+    \input{MAE.tex}
+    \caption{MAE: Mean Absolute Error (Smaller is better.  The top three models are highlighted in red, green and blue).}\label{fig:MAE}
+\end{minipage}
+\end{figure*}
+
+
+
+\newcommand{\fMeasureTypes}{Fixed & AdpT & SCut}
+\renewcommand{\tabTitle}{{\textbf{Model}}&\Cols{\textbf{Dataset1}}&\Cols{\textbf{Dataset1}}}
+
+
+\begin{figure*}[t]
+\begin{minipage}[t]{\linewidth}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.1}
+    \renewcommand{\tabcolsep}{0.505mm}
+    \input{FixAdpSc.tex}
+    \caption{$F_\beta$ statistics on each dataset,
+        using varying fixed thresholds,
+        adaptive threshold, and SaliencyCut (Higher is better. The top three models are highlighted in red, green and blue).
+    }\label{fig:FMeasure}
+\end{minipage}
+\end{figure*}
+
+
+
+\begin{figure*}[!htbp]
+    \renewcommand{\arraystretch}{1}
+    \renewcommand{\tabcolsep}{1.272mm}
+    \footnotesize
+    \input{MaxFRnk.tex} \caption{Summary rankings of models under different evaluation metrics.
+        Fixation prediction models are shown in bold face. The top three models under each evaluation metric are highlighted in red, green and blue.
+%        \cmm{Personally I prefer to remove the second and third row as they are similar to first row,
+%       and is more influenced by the parameter we choose for these segmentation method.}
+    }\label{tab:summaryRank}
+\end{figure*}
+
+
+
+\end{document}
+
