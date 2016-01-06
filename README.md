@@ -26,7 +26,12 @@ This is a sample code for the Benchmark evaluation.
 	2. In the DataSet exist one Folder named "Imgs", which include Source images and correspond Ground Truth. 
 	3. You can put your own Dataset using the format above.
 	4. If "Quick Start" is finished, You will get a Folder-"Results", which include all the results. In this Folder, you can run "DataSet***.m" by Matlab to get all evaluate curve in correspond DataSet. And run the Results.tex, you can get all charts.	
+	5. Questions directly related to my source code and project is welcome. Please refer to the project page for detailed contact information. Emails regarding questions like how to install and configure OpenCV will not be replied.
 	
 - Warning
 	1. You should not put this sample in the Folder using ChineseName or name with space.
-	
+
+- The source code is for educational and research use only. If you use any part of the source code, please cite related papers.
+	1. Salient Object Detection: A Benchmark, Ali Borji, Ming-Ming Cheng, Huaizu Jiang, Jia Li, IEEE TIP, 2015.
+	2. Salient Object Detection: A Survey, Ali Borji, Ming-Ming Cheng, Huaizu Jiang, Jia Li, arXiv eprint, 2014.
+	3. Global Contrast based Salient Region Detection. Ming-Ming Cheng, Niloy J. Mitra, Xiaolei Huang, Philip H. S. Torr, Shi-Min Hu. IEEE TPAMI, 2015.
