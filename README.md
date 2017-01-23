@@ -21,7 +21,7 @@ This is a sample code for the Benchmark evaluation.
 	5. Press "Ctrl + F5" in release x64(recommend).
 	6. OK,you have got all materials (saliency maps for each image, tables and figures in our paper, etc.).
 	
-- Noets
+- Notes
 	1. There are two DataSets named "DataSet1" and "DataSet2" in ./Data Folder.
 	2. In the DataSet exist one Folder named "Imgs", which include Source images and correspond Ground Truth. 
 	3. You can put your own Dataset using the format above.
